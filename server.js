@@ -2,10 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-app.use(cors({
-  origin: ['https://solestories.pk', 'https://www.solestories.pk']
-}));
+app.use(cors({ origin: ['https://solestories.pk', 'https://www.solestories.pk'] }));
 app.use(express.json({ limit: '10mb' }));
+
+app.get('/', (req, res) => res.json({ status: 'ok' }));
 
 app.post('/chat', async (req, res) => {
   try {
